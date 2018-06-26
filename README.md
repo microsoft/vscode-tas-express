@@ -1,7 +1,27 @@
+# Getting Started
+
+## Getting the Code
+
+Clone directly from GitHub or from your Try Azure App Service instance.
+
+## Running the Application Locally
+
+After cloning, install the necessary npm dependencies and use the `start` npm command to start a local development server.
+
+```
+> npm install
+> npm run start
+```
+
+## Deploying to Azure
+
+[Matt to fill in?]
 
 # Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This sample's code is hosted on GitHub: https://github.com/microsoft/vscode-tas-express.
+
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
