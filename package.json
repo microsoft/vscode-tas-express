@@ -2,9 +2,9 @@
   "name": "express-on-azure",
   "version": "1.0.0",
   "description": "A sample application for Azure using the Express framework",
-  "main": "lib/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node lib/server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
