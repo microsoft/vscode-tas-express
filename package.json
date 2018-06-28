@@ -12,7 +12,7 @@
     "url": "git+https://github.com/microsoft/vscode-tas-express.git"
   },
   "author": "Brian Terlson",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/microsoft/vscode-tas-express/issues"
   },
