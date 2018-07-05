@@ -1,21 +1,9 @@
-@-webkit-keyframes pulse {
-  25% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  75% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-}
 @keyframes pulse {
   25% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   75% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
 }
 
@@ -44,26 +32,91 @@ a{
 #hero img{
   width: 60px;
   margin-bottom: 12px;
-  -webkit-animation-name: pulse;
   animation-name: pulse;
-  -webkit-animation-duration: 5s;
   animation-duration: 5s;
-  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
 
 #hero h1 {
-  font-size: 32px;
+  font-size: 24px;
   margin: 0;
 }
 
-#content {
-  text-align: center;
-  margin: 32px;
+#hero a{
+  color: white;
 }
 
-#content h3 {
-  display: inline;
+#intro{
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+#content {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 32px;
+}
+
+#columns{
+  display: flex;
+  flex-direction: row;
+}
+
+#columns > div{
+  margin: 0 20px;
+  width: calc(100%/3)
+}
+
+#columns .cover{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#columns .cover img{
+  width: 50px;
+}
+
+#columns p{
+  margin: 0 0 4px;
+}
+
+#columns .title{
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#columns .description{
+  font-size: 14px;
+}
+
+#columns .link{
+  margin-top: 12px;
+
+}
+
+.vsc .cover{
+  background-color: #373538;
+}
+
+.git .cover{
+  background-color: #EE523B;
+}
+
+.azure .cover{
+  background-color: #156bda;
+}
+
+@media only screen and (max-width: 768px) {
+  #columns{
+    flex-direction: column;
+  }
+  #columns > div{
+    width: 100%;
+    margin: 0;
+    padding-bottom: 32px;
+  }
 }
