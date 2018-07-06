@@ -4,19 +4,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <title>Express App</title>
 </head>
 
 <body>
   <div id="hero">
-    <h1>Hello from Express</h1>
+    <img src="./images/node-logo.svg" alt="Azure App Service">
+    <h1>🎉 Welcome to Express 🎉</h1>
+    <!-- <p>Hosted in the Cloud by <a href="https://docs.microsoft.com/en-us/azure/app-service/">Azure App Service</a>. To get started, make changes to your project and deploy.</p> -->
   </div>
-  <div id="body">
-    <img id="logo" src="./images/aas-logo.svg" alt="">
-    <h3>Hosted in the Cloud by Azure App Service</h3>
+  <div id="content">
+    <div id="columns">
+      <div class="vsc">
+        <div class="cover">
+          <img src="./images/vsc-logo.svg" alt="VS Code">
+        </div>
+        <p class="title">Get started by editing with VS Code</p>
+        <p class="description">VS Code can deploy applications directly to Azure with the Azure App Service Tools extension.</p>
+        <p class="link">
+          <a href="#">Clone to VS Code</a>
+        </p>
+      </div>
+      <div class="git">
+        <div class="cover">
+          <img src="./images/git-logo.svg" alt="Git">
+        </div>
+        <p class="title">Clone or push with Git</p>
+        <p class="description">Working with Git has never been easier. Review diffs, stage files, and make commits right from the editor.</p>
+        <p class="link">
+          <a href="#">Get your Git credentials</a>
+        </p>
+      </div>
+      <div class="azure">
+        <div class="cover">
+          <img src="./images/azure-logo.svg" alt="Azure">
+        </div>
+        <p class="title">Manage your app in the Azure portal</p>
+        <p class="description">Build, manage, and monitor your apps in a single, unified console.</p>
+        <p class="link">
+          <a href="#">Launch the Azure portal</a>
+        </p>
+      </div>
+    </div>
   </div>
-  <p>Make changes to your project and deploy</p>
 </body>
 
 </html>
