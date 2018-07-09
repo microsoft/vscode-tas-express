@@ -11,43 +11,56 @@
 </head>
 
 <body>
+  <div id="banner">
+    <p>Your free web app will expire in
+      <strong>58 min 45 sec</strong>
+    </p>
+  </div>
   <div id="hero">
     <img src="./images/node-logo.svg" alt="Azure App Service">
     <h1>🎉 Welcome to Express 🎉</h1>
-    <!-- <p>Hosted in the Cloud by <a href="https://docs.microsoft.com/en-us/azure/app-service/">Azure App Service</a>. To get started, make changes to your project and deploy.</p> -->
+    <p>To get started, make changes to your project using the options below and deploy.</p>
+
   </div>
   <div id="content">
     <div id="columns">
-      <div class="vsc">
-        <div class="cover">
+      <div class="section vsc">
+        <div class="icon">
           <img src="./images/vsc-logo.svg" alt="VS Code">
         </div>
-        <p class="title">Get started by editing with VS Code</p>
+        <div class="text">
+          <p class="title">Start editing with VS Code</p>
         <p class="description">VS Code can deploy applications directly to Azure with the Azure App Service Tools extension.</p>
         <p class="link">
           <a href="#">Clone to VS Code</a>
         </p>
       </div>
-      <div class="git">
-        <div class="cover">
-          <img src="./images/git-logo.svg" alt="Git">
-        </div>
-        <p class="title">Clone or push with Git</p>
-        <p class="description">Working with Git has never been easier. Review diffs, stage files, and make commits right from the editor.</p>
-        <p class="link">
-          <a href="#">Get your Git credentials</a>
-        </p>
       </div>
-      <div class="azure">
-        <div class="cover">
+
+      <div class="section git">
+        <div class="icon"><img src="./images/git-logo.svg" alt="Git"></div>
+        <div class="text">
+          <p class="title">Clone or push with Git</p>
+          <p class="description">Review diffs, stage files, and make commits right from the editor.</p>
+          <p class="link">
+            <a href="#">Generate your Git credentials</a>
+          </p>
+        </div>
+       </div>
+
+      <div class="section azure">
+        <div class="icon">
           <img src="./images/azure-logo.svg" alt="Azure">
         </div>
-        <p class="title">Manage your app in the Azure portal</p>
-        <p class="description">Build, manage, and monitor your apps in a single, unified console.</p>
-        <p class="link">
-          <a href="#">Launch the Azure portal</a>
-        </p>
+        <div class="text">
+          <p class="title">Manage your app in the Azure portal</p>
+          <p class="description">Build, manage, and monitor your apps in a single, unified console.</p>
+          <p class="link">
+            <a href="#">Launch the Azure portal</a>
+          </p>
+        </div>
       </div>
+      
     </div>
   </div>
 </body>
