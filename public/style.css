@@ -1,12 +1,4 @@
-@keyframes pulse {
-  25% {
-    transform: scale(1.05);
-  }
-  75% {
-    transform: scale(0.95);
-  }
-}
-
+/* === Global === */
 html,
 body {
   margin: 0;
@@ -18,26 +10,18 @@ body {
   background-color: #fff;
 }
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 a {
   color: #0078D4;
 }
 
-#banner {
-  position: absolute;
-  top:0;right:0;
-  padding: 12px 20px 0;
-  text-align: right;
-  background-color: #0078d4;
-}
-
-#banner p {
-  margin: 0;
-  color: #f8f8f8;
-  font-size: 11px;
-}
-
+/* === HERO === */
 #hero {
-  padding: 32px;
+  padding: 0 32px 32px;
   text-align: center;
   color: white;
   background: #0078d4;
@@ -46,112 +30,112 @@ a {
 #hero img {
   width: 60px;
   margin-bottom: 12px;
-  animation-name: pulse;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  animation: logo-spin infinite 10s linear;
 }
 
 #hero h1 {
   font-size: 28px;
-  margin: 0;
   font-weight: 600;
 }
 
-#hero a {
-  color: white;
-}
-
 #hero p {
-  margin: 4px 0 0;
+  margin-top: 4px;
 }
 
-#intro {
-  padding-bottom: 24px;
-  text-align: center;
+#hero #countdown {
+  padding: 16px 0;
+  margin: 0;
+  text-align: right;
+  font-size: 11px;
+  background-color: #0078d4;
 }
+
+/* === Content === */
 
 #content {
   margin: 0 auto;
-  max-width: 1200px;
-  padding: 44px;
-}
-
-#content h2{
-  font-size: 22px;
-  text-align: center;
-}
-
-#columns {
+  max-width: 1100px;
+  padding: 44px 24px;
   display: flex;
   flex-direction: row;
 }
 
-  #columns .section {
-    margin: 0 32px;
-    width: calc(100%/3);
-    display: flex;
-  }
-
-  #columns .section:first-child{
-    margin-left: 0;
-  }
-  #columns .section:last-child{
-    margin-right: 0;
-  }
-
-    .section .icon{
-      margin-right: 24px;
-    }
-
-    .section img {
-      width: 44px;
-    }
-
-    .section p{
-      margin: 0;
-    }
-
-    .section .title {
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .section .description,
-    .section .link {
-      margin-top: 8px;
-      font-size: 12px;
-    }
-
-    .section .link {
-      /* margin-top: 12px; */
-    }
-
-.vsc .cover {
-  background-color: #373538;
+#content h2 {
+  font-size: 22px;
+  text-align: center;
 }
 
-.git .cover {
-  background-color: #EE523B;
+.column {
+  margin: 0 24px;
+  width: calc(100%/3);
+  display: flex;
 }
 
-.azure .cover {
-  background-color: #156bda;
+.column:first-child {
+  margin-left: 0;
 }
+
+.column:last-child {
+  margin-right: 0;
+}
+
+.column .icon {
+  margin-right: 24px;
+}
+
+.column img {
+  width: 44px;
+}
+
+.column p {
+  margin: 0;
+}
+
+.column .title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.column .description,
+.column .link {
+  font-size: 12px;
+}
+
+.column .description{
+  margin: 2px 0 8px;
+  color: #666;
+}
+
+/* === Responsive === */
 
 @media only screen and (max-width: 768px) {
-  #columns,.section {
+  #content,
+  .column {
     flex-direction: column;
   }
-  #columns .section {
+  #content .column {
     width: 100%;
     margin: 0;
     padding: 32px 0;
   }
-  #columns .section:first-child{
-      padding-top: 0;
+  .column img {
+    width: 60px;
   }
-  .section .title{
-      margin-top: 12px;
+  #content .column:first-child {
+    padding-top: 0;
+  }
+  .column .title {
+    margin-top: 12px;
+  }
+}
+
+/* === Animation === */
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
