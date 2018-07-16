@@ -2,9 +2,18 @@
 const express = require('express');
 const http = require('http');
 const fs = require('fs');
-
-const INDEX_CONTENT = fs.readFileSync(`${__dirname}/template.html`);
-
+const INDEX_CONTENT = fs
+  .readFileSync(`${__dirname}/template.html`, 'utf8')
+  .replace(
+    '{ envVars }',
+    `let env = ` +
+      JSON.stringify({
+        gitUrl: process.env['APPSETTING_SITE_GIT_URL'],
+        bashGitUrl: process.env['APPSETTING_SITE_BASH_GIT_URL'],
+        expiry: process.env['APPSETTING_SITE_EXPIRY_UTC'],
+        host: process.env['HTTP_HOST']
+      })
+  );
 // Azure App Service will set process.env.port for you, but we use 3000 in development.
 const PORT = process.env.PORT || 3000;
 

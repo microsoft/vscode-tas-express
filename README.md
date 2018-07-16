@@ -1,17 +1,28 @@
 # Getting Started
 
+This application is a canonical React application generated with `create-react-app`. The client code is under the `client` folder. The server code is in `index.js`.
+
 ## Getting the Code
 
 Clone directly from GitHub or from your Try Azure App Service instance.
 
 ## Running the Application Locally
 
-After cloning, install the necessary npm dependencies and use the `start` npm command to start a local development server.
+After cloning, install the necessary npm dependencies for both client and server:
 
 ```
 > npm install
-> npm run start
+> cd client
+> npm install
 ```
+
+Next, start the front-end development server and back-end API server. From the project root:
+
+```
+> npm start
+```
+
+You now have a front-end development server running on port 3000. The Express API is running on port 3001. Webpack takes care of proxying requests from the front-end development server to your API server as needed.
 
 ## Deploying to Azure
 
