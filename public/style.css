@@ -149,3 +149,48 @@ a {
     transform: rotate(360deg);
   }
 }
+
+.continue-section {
+  margin: 0 auto;
+  width: 530px;
+  padding-top: 30px;
+  display: flex;
+}
+
+.continue-column {
+  margin-left: 24px;
+}
+
+.continue-section .title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.continue-section .description,
+.continue-section .link {
+  font-size: 12px;
+}
+
+.continue-section .description {
+  margin: 2px 0 8px;
+  color: #666;
+}
+
+.numberCircle {
+  border-radius: 50%;
+  behavior: url(PIE.htc);
+  /* remove if you don't care about IE8 */
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  background: #fff;
+  border: 2px solid #666;
+  color: #666;
+  text-align: center;
+  font: 32px Arial, sans-serif;
+}
+
+hr {
+  width: 50%;
+  margin: 0 auto;
+}

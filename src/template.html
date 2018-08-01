@@ -20,7 +20,7 @@
       <strong id="timeLeft"></strong>
     </p>
     <img src="./images/node-logo.svg" alt="Azure App Service">
-    <h1>🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉 Welcome to Express on Azure App Service 🎉</h1>
+    <h1>🎉 Welcome to Express on Azure App Service 🎉</h1>
     <h2>Hosted at
       <a href="/" id="host"></a>
     </h2>
@@ -28,37 +28,55 @@
   </div>
 
   <!-- Content -->
-  <div id="content">
-    <div class="column vsc">
-      <div class="icon">
-        <img src="./images/vsc-logo.svg" alt="VS Code">
+  <div>
+    <div id="content">
+      <div class="numberCircle">1</div>
+      <div class="column vsc">
+        <div class="icon">
+          <img src="./images/vsc-logo.svg" alt="VS Code">
+        </div>
+        <div class="text">
+          <p class="title">Start editing with VS Code</p>
+          <p class="description">VS Code can deploy applications directly to Azure with the Azure App Service extension.</p>
+          <p class="link">
+            <a href="#" id="clone">Clone to VS Code</a>
+          </p>
+          <p class="link">
+            <a href="#" id="clone-insiders">Clone to VS Code Insiders</a>
+          </p>
+        </div>
       </div>
-      <div class="text">
-        <p class="title">Start editing with VS Code</p>
-        <p class="description">VS Code can deploy applications directly to Azure with the Azure App Service extension.</p>
-        <p class="link">
-          <a href="#" id="clone">Clone to VS Code</a>
-        </p>
-        <p class="link">
-          <a href="#" id="clone-insiders">Clone to VS Code Insiders</a>
-        </p>
+  
+      <div class="column git">
+        <div class="icon">
+          <img src="./images/git-logo.svg" alt="Git">
+        </div>
+        <div class="text">
+          <p class="title">Clone or push with Git</p>
+          <p class="description">Review diffs, stage files, and make commits right from the editor.</p>
+          <p class="link">
+            <a href="#" id="show-creds">Generate your Git credentials</a>
+          </p>
+          <p id="creds" style="display: none">
+            https://$SuccessfulSquirrel:r3jRkfmtNjs1LbjeMnghS4Sr6S4NJDxHplDgmKSuHTnlixhpqhgDujsoQsBN@successfulsquirrel.scm.azurewebsites.net/SuccessfulSquirrel.git
+          </p>
+  
+        </div>
       </div>
     </div>
-
-    <div class="column git">
-      <div class="icon">
-        <img src="./images/git-logo.svg" alt="Git">
-      </div>
-      <div class="text">
-        <p class="title">Clone or push with Git</p>
-        <p class="description">Review diffs, stage files, and make commits right from the editor.</p>
-        <p class="link">
-          <a href="#" id="show-creds">Generate your Git credentials</a>
-        </p>
-        <p id="creds" style="display: none">
-          https://$SuccessfulSquirrel:r3jRkfmtNjs1LbjeMnghS4Sr6S4NJDxHplDgmKSuHTnlixhpqhgDujsoQsBN@successfulsquirrel.scm.azurewebsites.net/SuccessfulSquirrel.git
-        </p>
-
+    <div>
+      <hr>
+      <div class="continue-section">
+        <div class="numberCircle">2</div>
+        <div class="continue-column">
+          <div class="text">
+            <p class="title">Continue building</p>
+            <p class="description">Learn how to deploy this app to a permanent service on your own subscription.</p>
+            <p class="link">
+              <a href="https://code.visualstudio.com/tutorials/app-service-extension/getting-started">Get started!</a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
