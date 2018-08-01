@@ -60,7 +60,7 @@ a {
 .content {
   margin: 0 auto;
   max-width: 1100px;
-  padding: 44px 24px;
+  padding: 30px 24px;
   display: flex;
   flex-direction: row;
 }
@@ -79,7 +79,6 @@ a {
 .column2 {
   margin: 0 24px;
   width: calc(100% / 3 * 2);
-  display: flex;
 }
 
 .column2 img {
@@ -162,7 +161,6 @@ a {
 
 .continue-section {
   width: 530px;
-  padding-top: 30px;
   display: flex;
 }
 
@@ -206,4 +204,19 @@ hr {
 
 #hero h2 {
   font-weight: normal;
+}
+
+code {
+  color: white;
+  padding: 8px;
+}
+
+.codeblock {
+  background-color: black;
+  width: 350px;
+  padding: 4px 0px;
+}
+
+.content-wrapper {
+  background-color: #fafafa;
 }
