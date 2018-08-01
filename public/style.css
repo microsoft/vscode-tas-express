@@ -76,6 +76,16 @@ a {
   display: flex;
 }
 
+.column2 {
+  margin: 0 24px;
+  width: calc(100% / 3 * 2);
+  display: flex;
+}
+
+.column2 img {
+  height: 240px;
+}
+
 .column:first-child {
   margin-left: 0;
 }
@@ -88,7 +98,7 @@ a {
   margin-right: 24px;
 }
 
-.column img {
+.column .icon img {
   width: 44px;
 }
 
