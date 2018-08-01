@@ -28,8 +28,20 @@
 
   <!-- Content -->
   <div>
-    <div id="content">
-      <div class="numberCircle">1</div>
+    <div class="content">
+      <div class="column">
+        <div>
+          <p style="
+        font-weight: bold;
+    ">To get started:</p>
+          <ol style="
+        padding-left: 16px;
+    ">
+            <li> Clone the code locally</li>
+          </ol>
+        </div>
+      </div>
+    
       <div class="column vsc">
         <div class="icon">
           <img src="./images/vsc-logo.svg" alt="VS Code">
@@ -38,14 +50,16 @@
           <p class="title">Start editing with VS Code</p>
           <p class="description">VS Code can deploy applications directly to Azure with the Azure App Service extension.</p>
           <p class="link">
-            <a href="#" id="clone">Clone to VS Code</a>
+            <a href="vscode://vscode.git/clone?url=https%3A%2F%2Fbowden%3A1230cALS%40tas-express-template.scm.azurewebsites.net%3A443%2Ftas-express-template.git"
+              id="clone">Clone to VS Code</a>
           </p>
           <p class="link">
-            <a href="#" id="clone-insiders">Clone to VS Code Insiders</a>
+            <a href="vscode-insiders://vscode.git/clone?url=https%3A%2F%2Fbowden%3A1230cALS%40tas-express-template.scm.azurewebsites.net%3A443%2Ftas-express-template.git"
+              id="clone-insiders">Clone to VS Code Insiders</a>
           </p>
         </div>
       </div>
-  
+    
       <div class="column git">
         <div class="icon">
           <img src="./images/git-logo.svg" alt="Git">
@@ -56,24 +70,77 @@
           <p class="link">
             <a href="#" id="show-creds">Generate your Git credentials</a>
           </p>
-          <p id="creds" style="display: none">
-            https://$SuccessfulSquirrel:r3jRkfmtNjs1LbjeMnghS4Sr6S4NJDxHplDgmKSuHTnlixhpqhgDujsoQsBN@successfulsquirrel.scm.azurewebsites.net/SuccessfulSquirrel.git
-          </p>
-  
+          <p id="creds" style="display: none"></p>
+    
         </div>
       </div>
     </div>
-    <div>
-      <hr>
+    <div class="content">
+      <div class="column">
+        <div>
+          <p style="
+            font-weight: bold;
+        ">To get started:</p>
+          <ol style="
+            padding-left: 16px;
+        ">
+            <li> Clone the code locally</li>
+            <li> Make a code change</li>
+            <li> Git push to redeploy the site</li>
+          </ol>
+        </div>
+      </div>
+    
+      <div class="column">
+        <img src="./images/edit-screenshot.png" alt="VS Code edits">
+      </div>
+    </div>
+    <div class="content">
+    
       <div class="continue-section">
-        <div class="numberCircle">2</div>
-        <div class="continue-column">
+    
+        <div class="continue-column" style="
+        margin: 0px;
+    ">
+    
           <div class="text">
+    
             <p class="title">Continue building</p>
             <p class="description">Learn how to deploy this app to a permanent service on your own subscription.</p>
-            <p class="link">
-              <a href="https://code.visualstudio.com/tutorials/app-service-extension/getting-started">Get started!</a>
-            </p>
+    
+    
+            <button type="button" style="
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+        /* margin: 0 auto; */
+        display: flex;
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.3333333;
+        border-radius: 6px;
+    ">Continue to walkthrough
+            </button>
+    
           </div>
         </div>
       </div>
