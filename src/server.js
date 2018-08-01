@@ -10,7 +10,7 @@ const INDEX_CONTENT = fs
       JSON.stringify({
         gitUrl: "https://bowden:1230cALS@tas-express-template.scm.azurewebsites.net:443/tas-express-template.git",
         bashGitUrl: process.env['APPSETTING_SITE_BASH_GIT_URL'],
-        expiry: process.env['APPSETTING_SITE_EXPIRY_UTC'],
+        expiry: "08/02/2018 00:50:42",
         host: process.env['HTTP_HOST']
       })
   );
