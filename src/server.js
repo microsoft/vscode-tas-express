@@ -10,7 +10,7 @@ const INDEX_CONTENT = fs
       JSON.stringify({
         gitUrl: process.env['APPSETTING_SITE_GIT_URL'],
         bashGitUrl: process.env['APPSETTING_SITE_BASH_GIT_URL'],
-        expiry: process.env['APPSETTING_SITE_EXPIRY_UTC'],
+        expiry:JSON.parse(fs.readFileSync(`metadata.json`, 'utf8')).expiryTime,
         host: process.env['HTTP_HOST']
       })
   );
