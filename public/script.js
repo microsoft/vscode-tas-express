@@ -1,6 +1,6 @@
 function timeTo(ts) {
   const t = Date.parse(ts) - Date.parse(new Date());
-  const minutes = Math.floor(t / 1000 / 60);
+  const minutes = Math.min(59, Math.floor(t / 1000 / 60));
   const seconds = (t - minutes * 60 * 1000) / 1000;
 
   return {
