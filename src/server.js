@@ -8,9 +8,9 @@ const INDEX_CONTENT = fs
     '{ envVars }',
     `let env = ` +
       JSON.stringify({
-        gitUrl: "https://bowden:1230cALS@tas-express-template.scm.azurewebsites.net:443/tas-express-template.git",
+        gitUrl: process.env['APPSETTING_SITE_GIT_URL'],
         bashGitUrl: process.env['APPSETTING_SITE_BASH_GIT_URL'],
-        expiry: "08/02/2018 00:50:42",
+        expiry: process.env['APPSETTING_SITE_EXPIRY_UTC'],
         host: process.env['HTTP_HOST']
       })
   );
