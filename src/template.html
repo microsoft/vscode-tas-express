@@ -28,43 +28,115 @@
     <h2>Hosted at
       <a href="/" id="host"></a>
     </h2>
-    <p>To get started, make changes to your web app using the options below and redeploy to see your changes.</p>
   </div>
 
+  
   <!-- Content -->
-  <div id="content">
-    <div class="column vsc">
-      <div class="icon">
-        <img src="./images/vsc-logo.svg" alt="VS Code">
-      </div>
-      <div class="text">
-        <p class="title">Start editing with VS Code</p>
-        <p class="description">VS Code can deploy applications directly to Azure with the Azure App Service extension.</p>
-        <p class="link">
-          <a href="#" id="clone">Clone to VS Code</a>
-        </p>
-        <p class="link">
-          <a href="#" id="clone-insiders">Clone to VS Code Insiders</a>
-        </p>
+  <div>
+    <div class="content-wrapper-light">
+      <div class="content">
+        <div class="column">
+          <div>
+            <p class="title">Get started</p>
+              <p> 1. Clone the code locally using one of the options to the right.</p>
+          </div>
+        </div>
+      
+        <div class="column vsc">
+          <div class="icon">
+            <img src="./images/vsc-logo.svg" alt="VS Code">
+          </div>
+          <div class="text">
+            <p class="title">Start editing with VS Code</p>
+            <p class="description">Easily edit and deploy straight from our favorite editor.</p>
+            <p class="link">
+              <a href="#"
+                id="clone">Clone with VS Code</a>
+            </p>
+            <p class="link">
+              <a href="#"
+                id="clone-insiders">Clone with VS Code Insiders</a>
+            </p>
+          </div>
+        </div>
+      
+        <div class="column git">
+          <div class="icon">
+            <img src="./images/git-logo.svg" alt="Git">
+          </div>
+          <div class="text">
+            <p class="title">Clone or push with Git</p>
+            <p class="description">Use git command line and your favorite editor to make changes and deploy to Azure.</p>
+            <p class="link">
+              <a href="#" id="show-creds">Generate your Git credentials</a>
+            </p>
+            <p id="creds" style="display: none"></p>
+      
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="column git">
-      <div class="icon">
-        <img src="./images/git-logo.svg" alt="Git">
-      </div>
-      <div class="text">
-        <p class="title">Clone or push with Git</p>
-        <p class="description">Review diffs, stage files, and make commits right from the editor.</p>
-        <p class="link">
-          <a href="#" id="show-creds">Generate your Git credentials</a>
-        </p>
-        <p id="creds" style="display: none">
-          https://$SuccessfulSquirrel:r3jRkfmtNjs1LbjeMnghS4Sr6S4NJDxHplDgmKSuHTnlixhpqhgDujsoQsBN@successfulsquirrel.scm.azurewebsites.net/SuccessfulSquirrel.git
-        </p>
-
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="column">
+          <div>
+              <p>2. Make a text change in <b>template.html</b></p>
+          </div>
+        </div>
+      
+        <div class="column2">
+          <img src="./images/edit-screenshot.png" alt="VS Code edits">
+        </div>
       </div>
     </div>
+
+    <div class="content-wrapper-light">
+      <div class="content">
+        <div class="column">
+          <div>
+            <p>3. Push with git to redeploy the app using the commands to the right.</p>
+            
+          </div>
+        </div>
+      
+        <div class="column2">
+          <div class="codeblock">
+            <code>  &gt; git commit -am "my first deployment" </code>
+          </div>
+          <div class="codeblock">
+            <code>  &gt; git push origin master </code>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-wrapper">
+      <div class="content">
+      
+        <div class="continue-section">
+      
+          <div class="continue-column" style="
+          margin: 0px;
+      ">
+      
+            <div class="text">
+      
+              <p class="title">Next steps</p>
+              <p class="description">Learn how to deploy this app to a permanent service on your own subscription.</p>
+      
+              <a href="https://code.visualstudio.com/tutorials/app-service-extension/getting-started" target="_blank">
+                <button class="continue-btn" type="button">
+                  Continue to walkthrough
+                </button>
+              </a>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </div>
 
