@@ -1,5 +1,12 @@
+Date.prototype.addHours = function(h) {    
+  this.setTime(this.getTime() + (h*60*60*1000)); 
+  return this;   
+}
 function timeTo(ts) {
-  const t = Date.parse(ts) - Date.parse(new Date());
+  var date = new Date(); 
+  var now_utc =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+      date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+  const t = Date.parse(ts) - Date.parse(new Date(now_utc));
   const minutes = Math.floor(t / 1000 / 60);
   const seconds = (t - minutes * 60 * 1000) / 1000;
 
@@ -16,7 +23,7 @@ function timeToString(ts) {
 
 setInterval(() => {
   const el = document.getElementById('timeLeft');
-  el.textContent = timeToString(env.expiry + ' UTC');
+  el.textContent = timeToString(expiryTime);
 }, 1000);
 
 document.addEventListener('DOMContentLoaded', () => {
