@@ -1,37 +1,16 @@
 // @ts-check
+import { loadEnvironmentVariables } from './util';
+
 const express = require('express');
 const http = require('http');
 const fs = require('fs');
-var INDEX_CONTENT = fs
-  .readFileSync(`${__dirname}/template.html`, 'utf8')
-  .replace(
-    '{ envVars }',
-    `let env = ` +
-      JSON.stringify({
-        gitUrl: process.env['APPSETTING_SITE_GIT_URL'],
-        bashGitUrl: process.env['APPSETTING_SITE_BASH_GIT_URL'],
-        expiry:JSON.parse(fs.readFileSync('metadata.json', 'utf8')).expiryTime,
-        host: process.env['HTTP_HOST']
-      })
-  );
+var INDEX_CONTENT = loadEnvironmentVariables();
 // Azure App Service will set process.env.port for you, but we use 3000 in development.
 const PORT = process.env.PORT || 3000;
 
+// needed to update remaining time of app service trial
 fs.watchFile('metadata.json', (curr, prev) => {
-  console.log(`the current mtime is: ${curr.mtime}`);
-  INDEX_CONTENT = fs
-  .readFileSync(`${__dirname}/template.html`, 'utf8')
-  .replace(
-    '{ envVars }',
-    `let env = ` +
-      JSON.stringify({
-        gitUrl: process.env['APPSETTING_SITE_GIT_URL'],
-        bashGitUrl: process.env['APPSETTING_SITE_BASH_GIT_URL'],
-        expiry:JSON.parse(fs.readFileSync('metadata.json', 'utf8')).expiryTime,
-        host: process.env['HTTP_HOST']
-      })
-  )
-  console.log(`the previous mtime was: ${prev.mtime}`);
+  INDEX_CONTENT = loadEnvironmentVariables();
 });
 
 // Create the express routes
@@ -47,3 +26,4 @@ let server = http.createServer(app);
 server.listen(PORT, function() {
   console.log(`Listening on port ${PORT}`);
 });
+
