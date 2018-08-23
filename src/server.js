@@ -1,5 +1,5 @@
 // @ts-check
-import { loadEnvironmentVariables } from './util';
+var loadEnvironmentVariables = require('./util');
 
 const express = require('express');
 const http = require('http');
