@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="style.css">
   <script src="./script.js"></script>
   <script>{ envVars }</script>
-  <script>var date = new Date(); 
-    var now_utc =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
-     date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+  <script>var date = new Date();
+    var now_utc = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+      date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
     let expiryTime = new Date(Math.min(Date.parse(env.expiry), Date.parse(new Date(now_utc).addHours(1))));</script>
   <title>Express App</title>
 </head>
@@ -20,86 +20,148 @@
 
   <!-- Hero -->
   <div id="hero">
-    <p id="countdown">This free web app will expire in
-      <strong id="timeLeft"></strong>
+    <p id="countdown">This <strong>free</strong> web application will expire in
+      <strong id="timeLeft">...</strong>
+      minutes...
     </p>
     <img src="./images/node-logo.svg" alt="Azure App Service">
-    <h1>🎉 Welcome to Express on Azure App Service 🎉</h1>
-    <h2>Hosted at
-      <a href="/" id="host"></a>
-    </h2>
+    <h1> Welcome to Azure! </h1>
+    <p>This is a simple Node application using the popular Express framework, hosted on Azure App Service.</p>
+    <p>To get started, follow the instructions below or jump straight to the walkthrough.</p>
   </div>
 
-  
+
   <!-- Content -->
   <div>
-    <div class="content-wrapper-light">
+
+
+    <div class="content-wrapper">
       <div class="content">
         <div class="column">
+          <div class="content">
+
+            <div class="numberCircle">1</div>
+
+            <div>
+              <p class="title">Get the Code</p>
+              <p> Click the links below to clone the sources for this application directly using Visual Studio Code, or get git credentials to clone from the command line.</p>
+
+              <div >
+                <div class="icon">
+                  <img src="./images/vsc-logo.svg" alt="Visual Studio Code">
+                </div>
+                  <p class="link">
+                    <a href="#" id="clone">Clone with Visual Studio Code</a>
+                  </p>
+              </div>
+
+              <div >
+                <div class="icon">
+                  <img src="./images/vsc-logo.svg" alt="Visual Studio Code">
+                </div>
+                <p class="link">
+                  <a href="#" id="clone-insiders">Clone with Visual Studio Code Insiders</a>
+                </p>
+              </div>
+              
+              <div >
+                <div class="icon">
+                  <img src="./images/git-logo.svg" alt="VS Code">
+                </div>
+                <p class="link">
+                  <a href="#" id="show-creds">Generate your Git credentials</a>
+                </p>
+                <p id="creds" style="display: none"></p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <div class="numberCircle">
+              2
+            </div>
+            <div>
+              <p class="title">Make some changes</p>
+              <p> For example, edit a heading in template.html and if you are using VS Code, press F5 to run and debug the application locally.</p>
+            </div>
+          </div>
+
+          <div class="column2">
+            <img src="./images/edit-debug.png" alt="VS Code edits">
+          </div>
+
+
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <div class="numberCircle">
+              3
+            </div>
+            <div>
+              <p class="title">Deploy your Changes</p>
+              <p> Commit your changes using VS Code or the command line. Push your branch and refresh this page to see your changes!</p>
+            </div>
+          </div>
+
+          <div class="content">
+          <div class="column3">
+            <img src="./images/commit.png" alt="VS Code edits">
+          </div>
+
+            <!-- <div class="column">
+
+            </div> -->
+
+            <!-- <div class="content">
+              <div class="codeblock">
+                <code>  &gt; git commit -am "my first deployment" </code>
+              </div>
+              <div class="codeblock">
+                <code>  &gt; git push origin master </code>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- <div class="column">
+          <div class="numberCircle">
+            4
+          </div>
           <div>
-            <p class="title">Get started</p>
-              <p> 1. Clone the code locally using one of the options to the right.</p>
+            <p class="title">Follow the Walkthrough</p>
+            <p> Get an indepth look at building and deploying Node applications to the Cloud.</p>
           </div>
-        </div>
-      
-        <div class="column vsc">
-          <div class="icon">
-            <img src="./images/vsc-logo.svg" alt="VS Code">
-          </div>
-          <div class="text">
-            <p class="title">Start editing with VS Code</p>
-            <p class="description">Easily edit and deploy straight from our favorite editor.</p>
-            <p class="link">
-              <a href="#"
-                id="clone">Clone with VS Code</a>
-            </p>
-            <p class="link">
-              <a href="#"
-                id="clone-insiders">Clone with VS Code Insiders</a>
-            </p>
-          </div>
-        </div>
-      
-        <div class="column git">
-          <div class="icon">
-            <img src="./images/git-logo.svg" alt="Git">
-          </div>
-          <div class="text">
-            <p class="title">Clone or push with Git</p>
-            <p class="description">Use git command line and your favorite editor to make changes and deploy to Azure.</p>
-            <p class="link">
-              <a href="#" id="show-creds">Generate your Git credentials</a>
-            </p>
-            <p id="creds" style="display: none"></p>
-      
-          </div>
-        </div>
+        </div> -->
+
       </div>
     </div>
 
     <div class="content-wrapper">
       <div class="content">
         <div class="column">
-          <div>
-              <p>2. Make a text change in <b>template.html</b></p>
-          </div>
+
+
+
+
         </div>
-      
-        <div class="column2">
+
+        <!-- <div class="column2">
           <img src="./images/edit-screenshot.png" alt="VS Code edits">
-        </div>
+        </div> -->
       </div>
     </div>
 
-    <div class="content-wrapper-light">
-      <div class="content">
+    <div class="content-wrapper">
+      <!-- <div class="content">
         <div class="column">
-          <div>
-            <p>3. Push with git to redeploy the app using the commands to the right.</p>
-            
-          </div>
+
         </div>
-      
+
         <div class="column2">
           <div class="codeblock">
             <code>  &gt; git commit -am "my first deployment" </code>
@@ -108,29 +170,29 @@
             <code>  &gt; git push origin master </code>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
-    
+
     <div class="content-wrapper">
       <div class="content">
-      
+
         <div class="continue-section">
-      
+
           <div class="continue-column" style="
           margin: 0px;
       ">
-      
+
             <div class="text">
-      
+
               <p class="title">Next steps</p>
               <p class="description">Learn how to deploy this app to a permanent service on your own subscription.</p>
-      
+
               <a href="https://code.visualstudio.com/tutorials/app-service-extension/getting-started" target="_blank">
                 <button class="continue-btn" type="button">
                   Continue to walkthrough
                 </button>
               </a>
-      
+
             </div>
           </div>
         </div>
