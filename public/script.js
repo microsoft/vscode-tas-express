@@ -28,20 +28,20 @@ setInterval(() => {
 
 document.addEventListener('DOMContentLoaded', () => {
   // set up the clone URLs.
-  // const clone = document.getElementById('clone');
-  // clone.setAttribute(
-  //   'href',
-  //   'vscode://vscode.git/clone?url=' + encodeURIComponent(env.gitUrl)
-  // );
+  const clone = document.getElementById('clone');
+  clone.setAttribute(
+    'href',
+    'vscode://vscode.git/clone?url=' + encodeURIComponent(env.gitUrl)
+  );
 
-  // const cloneInsiders = document.getElementById('clone-insiders');
-  // cloneInsiders.setAttribute(
-  //   'href',
-  //   'vscode-insiders://vscode.git/clone?url=' + encodeURIComponent(env.gitUrl)
-  // );
+  const cloneInsiders = document.getElementById('clone-insiders');
+  cloneInsiders.setAttribute(
+    'href',
+    'vscode-insiders://vscode.git/clone?url=' + encodeURIComponent(env.gitUrl)
+  );
 
-  // const host = document.getElementById('host');
-  // host.textContent = document.location.href;
+  const host = document.getElementById('host');
+  host.textContent = document.location.href;
 
   const creds = document.getElementById('creds');
   if (navigator.platform === 'Win32') {
