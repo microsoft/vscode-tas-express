@@ -61,10 +61,14 @@ a {
 /* === Content === */
 
 .content {
-  max-width: fit-content;
-  padding: 30px 10px;
+  margin: 0 auto;
+  max-width: 1600px;
+  /* padding: 30px 10px; */
+  padding-top: 30px;
+  
   display: flex;
-  flex-direction: row;
+  align-content: center;
+  /* flex-direction: row; */
 }
 
 #content h2 {
@@ -73,10 +77,11 @@ a {
 }
 
 .column {
-  margin: 0 24px;
-  /* min-width: calc(100% / 3); */
+  margin: 0 10px;
+  min-width: calc(100% / 4);
+  /* width: 300px; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: row; */
 }
 
 .column2 {
@@ -97,23 +102,18 @@ a {
   padding-left: 50px;
 }
 
-.column:first-child {
+/* .column:first-child {
   margin-left: 0;
 }
 
 .column:last-child {
   margin-right: 0;
-}
+} */
 
 .column .icon {
-  width: 20px;
   float: left;
-   margin-right: 12px;
-   flex-direction: row;
-  /* margin-left: 24px;  */
-} 
-
-.column .icon {
+  margin-right: 12px;
+  flex-direction: row;
   width: 10px;
   padding-right: 12px; 
 }
@@ -207,21 +207,21 @@ a {
 
 .numberCircle {
 
-  min-width: 36px;
+  min-width: 32px;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  padding: 10px;
+  width: 32px;
+  height: 32px;
+  padding: 5px;
   background: #0078d4;
-  border: 2px solid #0078d4;
+  /* border: 2px solid #0078d4; */
   color: #fff;
   text-align: center;
-  font-size: 32px;
+  font-size: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 100%;
+  line-height: 200%;
   margin-left: 5px;
   margin-right: 15px; 
   /* margin-right: 10px; */
