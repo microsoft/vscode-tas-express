@@ -18,7 +18,7 @@ function timeTo(ts) {
 
 function timeToString(ts) {
   const rec = timeTo(ts);
-  return `${rec.minutes} min ${rec.seconds} sec`;
+  return `${rec.minutes}`; // minutes`; // ${rec.seconds} sec`;
 }
 
 setInterval(() => {
