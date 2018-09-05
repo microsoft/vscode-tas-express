@@ -1,32 +1,29 @@
 # Getting Started
 
-This application is a canonical React application generated with `create-react-app`. The client code is under the `client` folder. The server code is in `index.js`.
+This is a very simple Node application that uses the Express framework. It is designed to work well with [Visual Studio Code](https://code.visualstudio.com) and to be easily deployed to [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/), Azure's fully-managed Platform as a Service (PaaS) that let's you deploy and scale web, mobile, and API apps. 
 
-## Getting the Code
+## Running the Application
 
-Clone directly from GitHub or from your Try Azure App Service instance.
+After cloning the [repository](`https://github.com/microsoft/vscode-tas-express`), install the necessary  dependencies and then run the application:
 
-## Running the Application Locally
-
-After cloning, install the necessary npm dependencies for both client and server:
-
-```
-> npm install
-> cd client
-> npm install
+``` console
+npm install
+npm start
 ```
 
-Next, start the front-end development server and back-end API server. From the project root:
+By default, the server listens on port 3000, so point your favorite browser to `http://localhost:3000`.
 
-```
-> npm start
-```
+In VS Code, simply press `F5` to launch the application in debug mode. Set a breakpoint and refresh the page to hit the breakpoint. From there, inspect variables, set watches, browse the call stack, and more. You can find more information about building and debugging Node applications, please see the [VS Code documentation](https://code.visualstudio.com/docs/azure/deployment).
 
-You now have a front-end development server running on port 3000. The Express API is running on port 3001. Webpack takes care of proxying requests from the front-end development server to your API server as needed.
+## Deploy to the Cloud
 
-## Deploying to Azure
+When you first open this folder in VS Code, you'll be prompted to install the [Azure App Service extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice). 
 
-[Matt to fill in?]
+The App Service extension lets you quickly quickly create sites, deploy them, view logs, and even set environment variables (such as a Connection String), right from within VS Code. For more information, see the [App Service Walkthrough](https://code.visualstudio.com/tutorials/app-service-extension/getting-started).
+
+## Additional Documentation
+
+More information on building and deploying Node applications to Azure can be found on the [Node Developer Center](https://docs.microsoft.com/en-us/javascript/azure/?view=azure-node-latest).
 
 # Contributing
 
@@ -43,3 +40,6 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## License
+[MIT](LICENSE.md)
