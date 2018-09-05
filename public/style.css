@@ -71,7 +71,6 @@ a {
 .content2 {
   margin: 0 auto;
   max-width: 1600px;
-  padding-top: 30px;
   display: flex;
   align-content: center;
 }
@@ -216,7 +215,6 @@ a {
 }
 
 .numberCircle {
-
   min-width: 32px;
   display: table-cell;
   text-align: center;
@@ -225,32 +223,31 @@ a {
   width: 32px;
   height: 32px;
   padding: 5px;
-  background: #0078d4;
-  /* border: 2px solid #0078d4; */
-  color: #fff;
+  border: 2px solid #0078d4;
+  color: #0078d4;
   text-align: center;
   font-size: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 200%;
   margin-left: 5px;
   margin-right: 15px; 
-  /* margin-right: 10px; */
 }
 
 .numberCircle-Light {
-  min-width: 36px;
+  min-width: 32px;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+  border: 2px solid #fff;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  padding: 10px;
+  width: 32px;
+  height: 32px;
+  padding: 5px;
   color: #fff;
   text-align: center;
   font-size: 32px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 100%;
+  line-height: 200%;
   margin-left: 5px;
   margin-right: 15px; 
 }
@@ -289,7 +286,7 @@ code {
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: lighter;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
@@ -303,7 +300,6 @@ code {
   user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
   color: #fff;
   background-color: #0078d4;
   border-color: #0078d4;
@@ -312,5 +308,12 @@ code {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
-  border-radius: 6px;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.code {
+  font-family: 'Courier New', Courier, monospace
 }
