@@ -2,7 +2,7 @@
   "name": "express-on-azure",
   "version": "1.0.0",
   "description": "A sample application for Azure using the Express framework",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
