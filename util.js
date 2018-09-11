@@ -1,7 +1,7 @@
 //@ts-check
 const fs = require('fs');
 const util = require('util');
-const metaDataFileName = `${__dirname}/../metadata.json`;
+const metaDataFileName = `${__dirname}/metadata.json`;
 var file = require(metaDataFileName);
 const promisifiedReadFile = util.promisify(fs.readFile);
 
