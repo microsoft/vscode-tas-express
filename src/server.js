@@ -48,14 +48,15 @@ async function main() {
    * the assigned user can access the git credentials
    */
   app.put('/api/metadata', (req, res) => {
-    if (req.body.timestamp) {
-      process.env['SITE_EXPIRY_UTC'] = req.body.timestamp;
+    if (req.body.userGuid == process.env['APPSETTING_SITE_SITEKEY']) {
+      if (req.body.timestamp) {
+        process.env['SITE_EXPIRY_UTC'] = req.body.timestamp;
+      }
+      util.updateMetadataFile(req.body.timestamp, req.body.guid);
+      res.end("Successfully updated meta-data");
+    } else {
+      res.send(401);
     }
-    if (req.body.guid) {
-      process.env['USER_GUID'] = req.body.guid;
-    }
-    util.updateMetadataFile(req.body.timestamp, req.body.guid);
-    res.end("Successfully updated meta-data");
   });
   // Create the HTTP server.
   let server = http.createServer(app);
