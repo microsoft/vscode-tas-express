@@ -13,6 +13,7 @@ async function main() {
     process.env['USER_GUID'] = fileData.userGuid;
   }
 
+
   
   // Azure App Service will set process.env.port for you, but we use 3000 in development.
   const PORT = process.env.PORT || 3000;
