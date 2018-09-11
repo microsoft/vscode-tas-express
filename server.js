@@ -24,12 +24,13 @@ async function main() {
   app.use(bodyParser.json());
   
   app.get('/:userGuid', async (req, res) => {
-    let indexContent = await util.loadEnvironmentVariables({
-      gitUrl: req.params.userGuid == process.env['USER_GUID'] ? process.env['APPSETTING_SITE_GIT_URL'] : "Incorrect url param",
-      bashGitUrl: req.params.userGuid == process.env['USER_GUID'] ? process.env['APPSETTING_SITE_BASH_GIT_URL'] : "Incorrect url param",
+    let vars = {
+      gitUrl: req.params.userGuid == process.env['APPSETTING_SITE_SITEKEY'] ? process.env['APPSETTING_SITE_GIT_URL'] : "Incorrect url param",
+      bashGitUrl: req.params.userGuid == process.env['APPSETTING_SITE_SITEKEY'] ? process.env['APPSETTING_SITE_BASH_GIT_URL'] : "Incorrect url param",
       expiry: process.env['SITE_EXPIRY_UTC'],
       host: process.env['HTTP_HOST']
-    });
+    };
+    let indexContent = await util.loadEnvironmentVariables(vars);
 
     res.end(indexContent);
   });
