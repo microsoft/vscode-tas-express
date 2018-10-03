@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="./script.js"></script>
+  <script>{ envVars }</script>
+  <script>var date = new Date();
+    var now_utc = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+      date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    let expiryTime = new Date(Math.min(Date.parse(env.expiry), Date.parse(new Date(now_utc).addHours(1))));</script>
+  <title>Express App</title>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <div id="hero">
+    <p id="countdown">This <strong>free</strong> web application will expire in
+      <strong id="timeLeft">...</strong>
+      minutes...
+    </p>
+    <img src="./images/node-logo.svg" alt="Azure App Service">
+
+    <!-- Make some edits!! -->
+    <h1> Welcome to Azure! </h1>
+
+    <p>This is a simple Node application using the popular <a href="https://expressjs.com/" target="_blank"rel="noopener noreferrer">Express</a> framework, hosted on Azure App Service at <a href="/"
+        id='host'></a></p>
+    <p>To get started, follow the instructions below or jump straight to the <a href="https://aka.ms/tas-walkthrough"
+        target="_blank"rel="noopener noreferrer">walkthrough</a></p>
+
+  </div>
+
+
+  <!-- Content -->
+  <div>
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="column">
+          <div class="numberCircle">
+            1
+          </div>
+
+          <div>
+            <p class="title">Get the code</p>
+            <p> Clone the sources using Visual Studio Code or use git from the command line.</p>
+
+            <div>
+              <p class="link">
+                <a href="#" id="clone">Clone with VS Code</a>
+              </p>
+            </div>
+
+            <div>
+              <p class="link">
+                <a href="#" id="clone-insiders">Clone with VS Code Insiders</a>
+              </p>
+            </div>
+
+            <div>
+              <p class="link">
+                <a href="#" id="show-creds">Generate your Git credentials</a>
+              </p>
+              <p id="creds" style="display: none"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="numberCircle">
+            2
+          </div>
+          <div>
+            <p class="title">Make some changes</p>
+            <p> Edit <span class="code">template.html</span> and run <span class="code">npm start</span> (or press F5 in VS Code!) to run the application locally.</p>
+            <div>
+              <p class="link">
+                <a href="https://code.visualstudio.com/docs/editor/codebasics" target="_blank"  rel="noopener noreferrer">Editing in VS Code</a>
+              </p>
+            </div>
+            <div>
+              <p class="link">
+                <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging" target="_blank"  rel="noopener noreferrer">Node debugging in
+                  VS Code</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="numberCircle">
+            3
+          </div>
+          <div>
+            <p class="title">Deploy your changes</p>
+            <p> Commit your changes, <span class="code">git push</span> to redploy, then refresh this page.</p>
+            <div>
+              <p class="link">
+                <a href="https://code.visualstudio.com/docs/editor/versioncontrol" target="_blank"  rel="noopener noreferrer">Version
+                  control in VS Code</a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="content2">
+        <div class="column centered empty"></div>
+        <div class="column centered">
+          <!-- <div class="numberCircle-Light"></div> -->
+          <div class="centered">
+            <a href="https://code.visualstudio.com/tutorials/app-service-extension/getting-started" target="_blank"  rel="noopener noreferrer">
+              <button class="continue-btn" type="button">
+                CONTINUE WALKTHROUGH >
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="column centered empty"></div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

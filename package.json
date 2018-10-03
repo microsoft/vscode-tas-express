@@ -1,0 +1,23 @@
+{
+  "name": "express-on-azure",
+  "version": "1.0.0",
+  "description": "A sample application for Azure using the Express framework",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microsoft/vscode-tas-express.git"
+  },
+  "author": "Brian Terlson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/microsoft/vscode-tas-express/issues"
+  },
+  "homepage": "https://github.com/microsoft/vscode-tas-express#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
