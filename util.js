@@ -2,7 +2,6 @@
 const fs = require('fs');
 const util = require('util');
 const metaDataFileName = `${__dirname}/metadata.json`;
-var file = require(metaDataFileName);
 const promisifiedReadFile = util.promisify(fs.readFile);
 
 module.exports.loadEnvironmentVariables = async function(updateObject) {    
@@ -15,12 +14,17 @@ module.exports.loadEnvironmentVariables = async function(updateObject) {
 }
 
 module.exports.updateMetadataFile = function(expiryTimestamp, userGuid) {
-    file.expiryTimestamp = expiryTimestamp;
-    file.userGuid = userGuid;
-    fs.writeFileSync(metaDataFileName, JSON.stringify(file));
+    if (fs.existsSync(metaDataFileName)) {
+        var file = require(metaDataFileName);
+        file.expiryTimestamp = expiryTimestamp;
+        file.userGuid = userGuid;
+        fs.writeFileSync(metaDataFileName, JSON.stringify(file));
+    }
 }
 
 module.exports.readMetadataFile = async function() {
-    let content = await promisifiedReadFile(metaDataFileName, 'utf8');
-    return JSON.parse(content);
+    if (fs.existsSync(metaDataFileName)) {
+        let content = await promisifiedReadFile(metaDataFileName, 'utf8');
+        return JSON.parse(content);
+    }
 }
