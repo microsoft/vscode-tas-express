@@ -85,6 +85,7 @@ a {
   width: calc(100% / 3);
   padding: 30px 24px;
   display: flex;
+  word-break: break-word;
 }
 
 @media (max-width: 1110px) {
