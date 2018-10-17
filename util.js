@@ -13,13 +13,9 @@ module.exports.loadEnvironmentVariables = async function(updateObject) {
         );
 }
 
-module.exports.updateMetadataFile = function(expiryTimestamp, userGuid) {
-    if (fs.existsSync(metaDataFileName)) {
-        var file = require(metaDataFileName);
-        file.expiryTimestamp = expiryTimestamp;
-        file.userGuid = userGuid;
-        fs.writeFileSync(metaDataFileName, JSON.stringify(file));
-    }
+module.exports.updateMetadataFile = function(expiryTimestamp) {
+    var file =  {expiryTimestamp : expiryTimestamp};
+    fs.writeFileSync(metaDataFileName, JSON.stringify(file));
 }
 
 module.exports.readMetadataFile = async function() {
