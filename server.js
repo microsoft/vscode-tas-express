@@ -6,10 +6,9 @@ var bodyParser = require("body-parser");
 
 
 async function main() {
-  if (!process.env['SITE_EXPIRY_UTC'] || !process.env['USER_GUID']) {
+  if (!process.env['SITE_EXPIRY_UTC']) {
     let fileData = (await util.readMetadataFile());
     process.env['SITE_EXPIRY_UTC'] = fileData ? fileData.expiryTimestamp : "";
-    process.env['USER_GUID'] = fileData ? fileData.userGuid : "";
   }
   
   // Azure App Service will set process.env.port for you, but we use 3000 in development.
