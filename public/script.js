@@ -34,12 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     'vscode://vscode.git/clone?url=' + encodeURIComponent(env.gitUrl)
   );
 
-  const cloneInsiders = document.getElementById('clone-insiders');
-  cloneInsiders.setAttribute(
-    'href',
-    'vscode-insiders://vscode.git/clone?url=' + encodeURIComponent(env.gitUrl)
-  );
-
   const host = document.getElementById('host');
   host.textContent = document.location.href;
 
