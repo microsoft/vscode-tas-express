@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const host = document.getElementById('host');
   host.textContent = document.location.href;
+  host.setAttribute(
+    'href',
+    document.location.href
+  );
 
   const creds = document.getElementById('creds');
   if (navigator.platform === 'Win32') {
