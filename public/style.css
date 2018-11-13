@@ -86,7 +86,7 @@ a {
   padding: 30px 24px;
   display: flex;
   word-break: break-word;
-  text-align: center;
+  text-align: left;
 }
 
 @media (max-width: 1110px) {
