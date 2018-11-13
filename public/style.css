@@ -86,6 +86,7 @@ a {
   padding: 30px 24px;
   display: flex;
   word-break: break-word;
+  text-align: left;
 }
 
 @media (max-width: 1110px) {
@@ -99,7 +100,7 @@ a {
   }
 
   .content2 {
-    display: block;
+    display: inline-block;
     padding-top: 0px;
     margin-top: 0px;
   }
@@ -310,6 +311,31 @@ code {
   font-size: 18px;
   line-height: 1.3333333;
 }
+
+.feedback-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  color:#0078d4;
+  background-color: #fff;
+  border-color: #0078d4;
+  margin-top: 10px ;
+  margin-left:10px;
+  display: flex;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+
 
 .centered {
   margin: 0 auto;
