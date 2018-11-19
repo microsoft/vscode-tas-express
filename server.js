@@ -50,7 +50,7 @@ async function main() {
       if (req.body.timestamp) {
         process.env['SITE_EXPIRY_UTC'] = req.body.timestamp;
       }
-      util.updateMetadataFile(req.body.timestamp, req.body.guid);
+      util.updateMetadataFile(req.body.timestamp);
       res.end("Successfully updated meta-data");
     } else {
       res.send(401);
