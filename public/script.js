@@ -1,14 +1,6 @@
-Date.prototype.addHours = function(h) {    
-  this.setTime(this.getTime() + (h*60*60*1000)); 
-  return this;   
-}
 function timeTo(ts) {
-  var date = new Date(); 
-  var now_utc =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
-      date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
-  const t = Date.parse(ts) - Date.parse(new Date(now_utc));
-  const minutes = Math.floor(t / 1000 / 60);
-  const seconds = (t - minutes * 60 * 1000) / 1000;
+  const minutes = Math.floor(ts / 60);
+  const seconds = (ts % 60);
 
   return {
     minutes,
@@ -16,24 +8,44 @@ function timeTo(ts) {
   };
 }
 
-function timeToString(ts) {
-  const rec = timeTo(ts);
-  return `${rec.minutes}`; // minutes`; // ${rec.seconds} sec`;
-}
-
-setInterval(() => {
-  const el = document.getElementById('timeLeft');
-  el.textContent = timeToString(expiryTime);
-}, 1000);
-
-document.addEventListener('DOMContentLoaded', () => {
+function getTASData() {
+  fetch('/api/metadata')
+  .then(res => res.json())
+  .then(data =>  {
+    env.timeLeft = data.timeLeft;
   // set up the clone URLs.
   const clone = document.getElementById('clone');
   clone.setAttribute(
     'href',
-    'vscode://vscode.git/clone?url=' + encodeURIComponent(env.gitUrl)
+    'vscode://vscode.git/clone?url=' + encodeURIComponent(data.gitUrl)
   );
+  const creds = document.getElementById('creds');
+  if (navigator.platform === 'Win32') {
+    creds.textContent = data.gitUrl;
+  } else {
+    creds.textContent = data.bashGitUrl;
+  }
+ })
+    .catch(function(error) {
+    // If there is any error you will catch them here
+ });
+}   
 
+function timeToString(ts) {
+  const rec = timeTo(ts);
+  return `${rec.minutes}`; 
+}
+
+setInterval(() => {
+  const el = document.getElementById('timeLeft');
+  if (!isNaN(env.timeLeft) && env.timeLeft > 0)
+  {
+    env.timeLeft -=3;
+    el.textContent = timeToString(env.timeLeft);
+  }
+}, 3000);
+
+document.addEventListener('DOMContentLoaded', () => {
   const host = document.getElementById('host');
   host.textContent = document.location.href;
   host.setAttribute(
@@ -41,12 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.location.href
   );
 
-  const creds = document.getElementById('creds');
-  if (navigator.platform === 'Win32') {
-    creds.textContent = env.gitUrl;
-  } else {
-    creds.textContent = env.bashGitUrl;
-  }
   const showCreds = document.getElementById('show-creds');
   showCreds.addEventListener('click', function(e) {
     e.preventDefault();
