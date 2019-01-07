@@ -29,10 +29,7 @@
     <!-- Make some edits!! -->
     <h1> Welcome to Azure! </h1>
 
-    <p>This is a simple Node application using the popular <a href="https://expressjs.com/" target="_blank"rel="noopener noreferrer">Express</a> framework, hosted on Azure App Service at <a href="/"
-        id='host'></a></p>
-    <p>To get started, follow the instructions below or jump straight to the <a href="https://aka.ms/tas-walkthrough"
-        target="_blank"rel="noopener noreferrer">walkthrough</a></p>
+    <p>This is a simple Node application hosted on Azure App Service at <a href="/" id='host'></a></p>
 
   </div>
 
@@ -53,12 +50,12 @@
             <div>
               <p class="link">
                 <a href="#" id="clone">Clone with VS Code</a>
+                <a style="margin-left: 10px" href="#" id="show-creds">Clone with HTTPS</a>
               </p>
             </div>
 
             <div>
               <p class="link">
-                <a href="#" id="show-creds">Generate your Git credentials</a>
               </p>
               <p id="creds" style="display: none"></p>
             </div>
@@ -71,18 +68,8 @@
           </div>
           <div>
             <p class="title">Make some changes</p>
-            <p> Edit <span class="code">template.html</span> and run <span class="code">npm start</span> (or press F5 in VS Code!) to run the application locally.</p>
-            <div>
-              <p class="link">
-                <a href="https://code.visualstudio.com/docs/editor/codebasics" target="_blank"  rel="noopener noreferrer">Editing in VS Code</a>
-              </p>
-            </div>
-            <div>
-              <p class="link">
-                <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging" target="_blank"  rel="noopener noreferrer">Node debugging in
-                  VS Code</a>
-              </p>
-            </div>
+            <p> Edit <span class="code">template.html</span> and run <span class="code">npm start</span> (or press F5
+              in VS Code!) to run the application locally.</p>
           </div>
         </div>
 
@@ -93,12 +80,6 @@
           <div>
             <p class="title">Deploy your changes</p>
             <p> Commit your changes, <span class="code">git push</span> to redploy, then refresh this page.</p>
-            <div>
-              <p class="link">
-                <a href="https://code.visualstudio.com/docs/editor/versioncontrol" target="_blank"  rel="noopener noreferrer">Version
-                  control in VS Code</a>
-              </p>
-            </div>
 
           </div>
         </div>
@@ -107,25 +88,22 @@
 
     <div>
       <div class="content2">
-        <div class="column centered empty"></div>
-        <div class="column centered">
-          <!-- <div class="numberCircle-Light"></div> -->
-          <div class="centered">
-              <button class="continue-btn" type="button" onclick="location.href='https://aka.ms/tas-node-walkthrough'"">
-                CONTINUE WALKTHROUGH >
-              </button>
-          </div>
+        <div class="centered">
           <div>
-              <button class="feedback-btn" type="button" onclick="window.open('https://www.surveymonkey.com/r/56RHP72','_blank')">
-                I RAN INTO AN ISSUE &gt;
-              </button>
+            <button class="continue-btn" type="button" onclick="window.open('https://azure.microsoft.com/en-us/free/?utm_source=campaign&utm_campaign=vscode-tryappservice&mktingSource=vscode-tryappservice', '_blank')">
+              GET A FREE SUBSCRIPTION
+            </button>
+            <button class="feedback-btn" type="button" onclick="window.open('https://aka.ms/tas-node-walkthrough','_blank')">
+              READ THE DOCS
+            </button>
+            <button class="feedback-btn" type="button" onclick="window.open('https://www.surveymonkey.com/r/56RHP72','_blank')">
+              I RAN INTO AN ISSUE
+            </button>
           </div>
         </div>
-        <div class="column centered empty"></div>
       </div>
-    </div>
 
-  </div>
+    </div>
 
 </body>
 
