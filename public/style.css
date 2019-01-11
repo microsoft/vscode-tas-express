@@ -305,11 +305,12 @@ code {
   color: #fff;
   background-color: #0078d4;
   border-color: #0078d4;
-  margin-top: 10px ;
-  display: flex;
+  margin-top: 55px ;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
+  width: 275px;
+  text-align: center;
 }
 
 .feedback-btn {
@@ -328,12 +329,13 @@ code {
   color:#0078d4;
   background-color: #fff;
   border-color: #0078d4;
-  margin-top: 10px ;
+  margin-top: 55px ;
   margin-left:10px;
-  display: flex;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
+  width: 275px;
+  text-align: center;
 }
 
 
@@ -342,5 +344,6 @@ code {
 }
 
 .code {
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
