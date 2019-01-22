@@ -2,61 +2,49 @@
 var util = require('./util');
 const express = require('express');
 const http = require('http');
-var bodyParser = require("body-parser");
-
+const url = require('url'); 
+var cookieParser = require('cookie-parser');
+const request = require('request');
 
 async function main() {
-  if (!process.env['SITE_EXPIRY_UTC']) {
-    let fileData = (await util.readMetadataFile());
-    process.env['SITE_EXPIRY_UTC'] = fileData ? fileData.expiryTimestamp : "";
-  }
-  
   // Azure App Service will set process.env.port for you, but we use 3000 in development.
   const PORT = process.env.PORT || 3000;
   // Create the express routes
   let app = express();
   app.use(express.static('public'));
-  app.use(bodyParser.urlencoded({ extended: false }));
-  app.use(bodyParser.json());
-  
-  app.get('/:userGuid', async (req, res) => {
-    let vars = {
-      gitUrl: req.params.userGuid == process.env['APPSETTING_SITE_SITEKEY'] ? process.env['APPSETTING_SITE_GIT_URL'] : "Incorrect url param",
-      bashGitUrl: req.params.userGuid == process.env['APPSETTING_SITE_SITEKEY'] ? process.env['APPSETTING_SITE_BASH_GIT_URL'] : "Incorrect url param",
-      expiry: process.env['SITE_EXPIRY_UTC'],
-      host: process.env['HTTP_HOST']
-    };
-    let indexContent = await util.loadEnvironmentVariables(vars);
+  app.use(cookieParser());
 
+  app.get('/', async (req, res) => {
+    if(req.query && req.query.loginsession)
+    {
+    res.cookie('loginsession',req.query.loginsession, { maxAge: 3600000, httpOnly: true, })
+    res.redirect(url.parse(req.url).pathname);
+    }
+    else
+    {
+    let indexContent = await util.loadEnvironmentVariables({host: process.env['HTTP_HOST']});
     res.end(indexContent);
-  });
-  
-  app.get('/', async(req, res) => {
-    let indexContent = await util.loadEnvironmentVariables({
-      gitUrl: "Supply a guid in the url for git write access",
-      bashGitUrl: "Supply a guid in the url for git write access",
-      expiry: process.env['SITE_EXPIRY_UTC'],
-      host: process.env['HTTP_HOST']
-    });
-    
-    res.end(indexContent);
-  });
-  /**
-   * Try app service uses this endpoint to set remaining trial time and set a guid so that only
-   * the assigned user can access the git credentials
-   */
-  app.put('/api/metadata', (req, res) => {
-    if (req.body.userGuid == process.env['APPSETTING_SITE_SITEKEY']) {
-      if (req.body.timestamp) {
-        process.env['SITE_EXPIRY_UTC'] = req.body.timestamp;
-      }
-      util.updateMetadataFile(req.body.timestamp);
-      res.end("Successfully updated meta-data");
-    } else {
-      res.send(401);
     }
   });
-  // Create the HTTP server.
+
+  app.get('/api/metadata', async (req, res) => {
+    if (req.cookies.loginsession) {
+      const options = {
+        url: 'https://tryappservice.azure.com/api/resource',
+          headers:{
+            cookie: 'loginsession='+req.cookies.loginsession
+        }
+      };
+      
+  const x =request(options);
+  x.pipe(res);
+}
+else{
+  res.end(404);
+}
+});
+
+// Create the HTTP server.
   let server = http.createServer(app);
   server.listen(PORT, function () {
     console.log(`Listening on port ${PORT}`);
