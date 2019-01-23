@@ -31,7 +31,7 @@ async function main() {
     if (req.cookies.loginsession) {
       const options = {
         url: 'https://tryappservice.azure.com/api/vscoderesource',
-          headers:{
+        headers:{
             cookie: 'loginsession='+req.cookies.loginsession
         }
       };
