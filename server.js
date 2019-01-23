@@ -30,7 +30,7 @@ async function main() {
   app.get('/api/metadata', async (req, res) => {
     if (req.cookies.loginsession) {
       const options = {
-        url: 'https://tryappservice.azure.com/api/resource',
+        url: 'https://tryappservice.azure.com/api/vscoderesource',
           headers:{
             cookie: 'loginsession='+req.cookies.loginsession
         }
