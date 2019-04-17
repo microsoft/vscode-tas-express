@@ -29,8 +29,9 @@ async function main() {
 
   app.get('/api/metadata', async (req, res) => {
     if (req.cookies.loginsession) {
+      let tryappserviceendpoint= process.env['TRY_APPSERVICE_RESOURCE_URL']||'https://tryappservice.azure.com/api/vscoderesource';
       const options = {
-        url: 'https://tryappservice.azure.com/api/vscoderesource',
+        url: tryappserviceendpoint,
         headers:{
             cookie: 'loginsession='+req.cookies.loginsession
         }
