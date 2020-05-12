@@ -26,7 +26,7 @@ function getTASData() {
     `vscode://ms-azuretools.vscode-azureappservice/ImportTrialApp?loginSession=${data.loginSession}`
   );
 
-  const importInsiders = document.getElementById('import');
+  const importInsiders = document.getElementById('insiders');
   importInsiders.setAttribute(
     'href',
     `vscode-insiders://ms-azuretools.vscode-azureappservice/ImportTrialApp?loginSession=${data.loginSession}`
