@@ -148,6 +148,10 @@ a {
   margin-top:10px;
 }
 
+.link {
+  list-style-type: none;
+}
+
 .column .description {
   margin: 2px 0 8px;
   color: #666;

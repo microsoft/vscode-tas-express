@@ -19,6 +19,19 @@ function getTASData() {
     'href',
     'vscode://vscode.git/clone?url=' + encodeURIComponent(data.gitUrl)
   );
+
+  const importVSCode = document.getElementById('import');
+  importVSCode.setAttribute(
+    'href',
+    `vscode://ms-azuretools.vscode-azureappservice/ImportTrialApp?loginSession=${data.loginSession}`
+  );
+
+  const importInsiders = document.getElementById('import');
+  importInsiders.setAttribute(
+    'href',
+    `vscode-insiders://ms-azuretools.vscode-azureappservice/ImportTrialApp?loginSession=${data.loginSession}`
+  );
+
   const creds = document.getElementById('creds');
   if (navigator.platform === 'Win32') {
     creds.textContent = data.gitUrl;
