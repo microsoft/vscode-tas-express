@@ -54,6 +54,7 @@ setInterval(() => {
   if (!isNaN(env.timeLeft) && env.timeLeft > 0)
   {
     env.timeLeft -=3;
+    env.timeLeft = (env.timeLeft < 0) ? 0 : env.timeLeft;
     el.textContent = timeToString(env.timeLeft);
   }
 }, 3000);
