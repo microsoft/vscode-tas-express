@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+    <script>{ envVars }</script>
+    <title>Express App</title>
+</head>
+
+<body onload="getTASData()">
+
+    <!-- Hero -->
+    <div id="hero">
+        <p id="countdown">This <strong>free</strong> web application will expire in
+            <strong id="timeLeft">...</strong>
+            minutes...
+        </p>
+        <img src="./images/node-logo.svg" alt="Azure App Service">
+
+        <!-- Make some edits!! -->
+        <h1> Welcome to Azure! </h1>
+
+        <p>This is a simple Node application hosted on Azure App Service at <a href="/" id='host'></a></p>
+
+    </div>
+
+
+    <!-- Content -->
+    <div>
+        <div class="content-wrapper">
+            <div class="content">
+                <div class="column">
+                    <div class="numberCircle">
+                        1
+                    </div>
+
+                    <div>
+                        <p class="title">Get the code</p>
+                        <p> Import app into VS Code using the Azure App Service extension, clone the source using Visual
+                            Studio
+                            Code, or use git from the command line.</p>
+
+                        <div>
+                            <p class="link">
+                            <ul class="link">
+                                <li><a href="#" id="import">Import app into VS Code</a><a style="margin-left: 10px"
+                                        href="#" id="insiders">Import app into VS Code Insiders</a></li>
+                                <li><a href="#" id="clone">Clone with VS Code</a> <a style="margin-left: 10px" href="#"
+                                        id="show-creds">Clone with HTTPS</a></li>
+                            </ul>
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="link">
+                            </p>
+                            <p id="creds" style="display: none"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="numberCircle">
+                        2
+                    </div>
+                    <div>
+                        <p class="title">Make some changes</p>
+                        <p> Edit <span class="code">template.html</span> and run <span class="code">npm start</span> (or
+                            press F5
+                            in VS Code!) to run the application locally.</p>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="numberCircle">
+                        3
+                    </div>
+                    <div>
+                        <p class="title">Deploy your changes</p>
+                        <p> Commit your changes, <span class="code">git push</span> to redeploy, then refresh this page.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="content2">
+                <div class="centered">
+                    <div>
+                        <button class="continue-btn" type="button"
+                            onclick="window.open('https://azure.microsoft.com/en-us/free/?utm_source=campaign&utm_campaign=vscode-tryappservice&mktingSource=vscode-tryappservice', '_blank')">
+                            GET A FREE SUBSCRIPTION
+                        </button>
+                        <button class="feedback-btn" type="button"
+                            onclick="window.open('https://aka.ms/tas-node-walkthrough','_blank')">
+                            READ THE DOCS
+                        </button>
+                        <button class="feedback-btn" type="button"
+                            onclick="window.open('https://www.surveymonkey.com/r/56RHP72','_blank')">
+                            I RAN INTO AN ISSUE
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
