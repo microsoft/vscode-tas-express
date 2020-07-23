@@ -25,17 +25,6 @@ async function main() {
     }
   });
 
-  app.get('/trial', async (req, res) => {
-    if (req.query && req.query.loginsession) {
-      res.cookie('loginsession', req.query.loginsession, { maxAge: 3600000, httpOnly: true, })
-      res.redirect(url.parse(req.url).pathname);
-    }
-    else {
-      let indexContent = await util.loadEnvironmentVariablesTrial({ host: process.env['HTTP_HOST'] });
-      res.end(indexContent);
-    }
-  });
-
   app.get('/api/metadata', async (req, res) => {
     if (req.cookies.loginsession) {
       let tryappserviceendpoint = (process.env['APPSETTING_TRYAPPSERVICE_URL'] || 'https://tryappservice.azure.com') + '/api/vscoderesource';
